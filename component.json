@@ -1,0 +1,380 @@
+{
+    "title": "AmazonMQ",
+    "description": "Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols.",
+    "docsUrl": "https://docs.aws.amazon.com/mq/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/mq/2017-11-27/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://mq.amazonaws.com/",
+                    "http://mq.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "ListBrokers": {
+            "main": "./lib/actions/ListBrokers.js",
+            "title": "Returns a list of all brokers.",
+            "description": "Returns a list of all brokers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListBrokers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateBroker": {
+            "main": "./lib/actions/CreateBroker.js",
+            "title": "Creates a broker. Note: This API is asynchronous.",
+            "description": "Creates a broker. Note: This API is asynchronous.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateBroker.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteBroker": {
+            "main": "./lib/actions/DeleteBroker.js",
+            "title": "Deletes a broker. Note: This API is asynchronous.",
+            "description": "Deletes a broker. Note: This API is asynchronous.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteBroker.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeBroker": {
+            "main": "./lib/actions/DescribeBroker.js",
+            "title": "Returns information about the specified broker.",
+            "description": "Returns information about the specified broker.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeBroker.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateBroker": {
+            "main": "./lib/actions/UpdateBroker.js",
+            "title": "Adds a pending configuration change to a broker.",
+            "description": "Adds a pending configuration change to a broker.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateBroker.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RebootBroker": {
+            "main": "./lib/actions/RebootBroker.js",
+            "title": "Reboots a broker. Note: This API is asynchronous.",
+            "description": "Reboots a broker. Note: This API is asynchronous.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RebootBroker.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListUsers": {
+            "main": "./lib/actions/ListUsers.js",
+            "title": "Returns a list of all ActiveMQ users.",
+            "description": "Returns a list of all ActiveMQ users.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteUser": {
+            "main": "./lib/actions/DeleteUser.js",
+            "title": "Deletes an ActiveMQ user.",
+            "description": "Deletes an ActiveMQ user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeUser": {
+            "main": "./lib/actions/DescribeUser.js",
+            "title": "Returns information about an ActiveMQ user.",
+            "description": "Returns information about an ActiveMQ user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateUser": {
+            "main": "./lib/actions/CreateUser.js",
+            "title": "Creates an ActiveMQ user.",
+            "description": "Creates an ActiveMQ user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateUser": {
+            "main": "./lib/actions/UpdateUser.js",
+            "title": "Updates the information for an ActiveMQ user.",
+            "description": "Updates the information for an ActiveMQ user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListConfigurations": {
+            "main": "./lib/actions/ListConfigurations.js",
+            "title": "Returns a list of all configurations.",
+            "description": "Returns a list of all configurations.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListConfigurations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateConfiguration": {
+            "main": "./lib/actions/CreateConfiguration.js",
+            "title": "Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).",
+            "description": "Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeConfiguration": {
+            "main": "./lib/actions/DescribeConfiguration.js",
+            "title": "Returns information about the specified configuration.",
+            "description": "Returns information about the specified configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateConfiguration": {
+            "main": "./lib/actions/UpdateConfiguration.js",
+            "title": "Updates the specified configuration.",
+            "description": "Updates the specified configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListConfigurationRevisions": {
+            "main": "./lib/actions/ListConfigurationRevisions.js",
+            "title": "Returns a list of all revisions for the specified configuration.",
+            "description": "Returns a list of all revisions for the specified configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListConfigurationRevisions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeConfigurationRevision": {
+            "main": "./lib/actions/DescribeConfigurationRevision.js",
+            "title": "Returns the specified configuration revision for the specified configuration.",
+            "description": "Returns the specified configuration revision for the specified configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeConfigurationRevision.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteTags": {
+            "main": "./lib/actions/DeleteTags.js",
+            "title": "Remove a tag from a resource.",
+            "description": "Remove a tag from a resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTags": {
+            "main": "./lib/actions/ListTags.js",
+            "title": "Lists tags for a resource.",
+            "description": "Lists tags for a resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateTags": {
+            "main": "./lib/actions/CreateTags.js",
+            "title": "Add a tag to a resource.",
+            "description": "Add a tag to a resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

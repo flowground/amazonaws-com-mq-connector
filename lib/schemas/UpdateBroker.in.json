@@ -1,0 +1,83 @@
+{
+    "type": "object",
+    "properties": {
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Updates the broker using the specified properties.",
+            "properties": {
+                "AutoMinorVersionUpgrade": {
+                    "description": "Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.",
+                    "type": "boolean"
+                },
+                "Configuration": {
+                    "description": "A list of information about the configuration.",
+                    "properties": {
+                        "Id": {
+                            "description": "Required. The unique ID that Amazon MQ generates for the configuration.",
+                            "type": "string"
+                        },
+                        "Revision": {
+                            "description": "The revision number of the configuration.",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "EngineVersion": {
+                    "description": "The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html",
+                    "type": "string"
+                },
+                "Logs": {
+                    "description": "Enables Amazon CloudWatch logging for brokers.",
+                    "properties": {
+                        "Audit": {
+                            "description": "Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.",
+                            "type": "boolean"
+                        },
+                        "General": {
+                            "description": "Enables general logging.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "broker_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Updates the information for an ActiveMQ user.",
+            "properties": {
+                "ConsoleAccess": {
+                    "description": "Enables access to the the ActiveMQ Web Console for the ActiveMQ user.",
+                    "type": "boolean"
+                },
+                "Groups": {
+                    "description": "The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "Password": {
+                    "description": "The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "broker_id": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
